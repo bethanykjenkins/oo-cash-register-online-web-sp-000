@@ -13,6 +13,7 @@
     @items << title
   end
     @total += price * quantity
+    @last_transaction = price * quantity
   end
   
   def apply_discount
@@ -25,6 +26,7 @@
   end
   
   def void_last_transaction
+    @total -= @last_transaction
   end
   
 end
